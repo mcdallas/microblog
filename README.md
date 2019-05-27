@@ -29,3 +29,10 @@ python run.py
 ```
 
 ### Visit http://127.0.0.1:7000
+
+### Run tests
+
+```
+pip install pytest
+pytest
+```
