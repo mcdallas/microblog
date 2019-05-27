@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>
+  {{ post['title'] }}
+</h1>
+
+<div class="post-container">
+    {{ post['body']|markdown }}
+</div>
+
+<span class="post-date">
+    by
+    {{ post['username'] }}
+    on
+    {{ post['created'].strftime('%Y-%m-%d') }}
+</span>
+    {% if g.user['id'] == post['author_id'] %}
+        <a class="action" href="{{ url_for('blog.update', postid=post['id']) }}">Edit</a>
+    {% endif %}
+{% endblock %}
